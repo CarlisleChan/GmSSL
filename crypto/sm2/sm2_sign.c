@@ -548,7 +548,7 @@ int SM2_sign_ex(int type, const unsigned char *dgst, int dgstlen,
 {
 	ECDSA_SIG *s;
 
-	if (type != NID_undef) {
+	if (type == NID_undef) {
 		return 0;
 	}
 
@@ -580,7 +580,7 @@ int SM2_verify(int type, const unsigned char *dgst, int dgstlen,
 	int derlen = -1;
 	int ret = -1;
 
-	if (type != NID_undef) {
+	if (type == NID_undef) {
 		return ret;
 	}
 
